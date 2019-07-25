@@ -50,7 +50,7 @@ public class GoodsController {
     public void insert() {
         Goods goods = new Goods();
 
-        goods.setName("test3");
+        goods.setName("苹果");
         goods.setColor("test");
         goods.setPrice(new BigDecimal(1));
         goods.setNum(1);
