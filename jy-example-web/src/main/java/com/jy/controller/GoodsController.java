@@ -7,6 +7,7 @@ import com.jy.entity.GoodsEsInfo;
 import com.jy.service.GoodsESRepository;
 import com.jy.service.IGoodsService;
 import com.jy.utils.RedisUtils;
+import org.jasypt.encryption.StringEncryptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,9 @@ public class GoodsController {
 
     @Autowired
     private GoodsESRepository goodsESRepository;
+
+    @Autowired
+    private StringEncryptor encryptor;
 
     @RequestMapping("/insert")
     public void insert() {
@@ -117,6 +121,12 @@ public class GoodsController {
         GoodsEsInfo goodsEsInfo = goodsESRepository.queryGoodsEsInfoById("1");
         logger.info(JSON.toJSONString(goodsEsInfo));
         return goodsEsInfo;
+    }
+
+    @RequestMapping("/encrypt")
+    public void encrypt() {
+        String pwd = encryptor.encrypt("root");
+        logger.info(pwd);
     }
 }
 

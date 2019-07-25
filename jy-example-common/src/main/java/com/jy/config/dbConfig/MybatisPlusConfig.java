@@ -1,4 +1,4 @@
-package com.jy.dbConfig;
+package com.jy.config.dbConfig;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
