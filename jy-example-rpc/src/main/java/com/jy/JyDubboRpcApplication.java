@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class JyDubboRpcApplication {
 
     public static void main(String[] args) {
+        System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(JyDubboRpcApplication.class, args);
         System.out.println("------------------------------启动成功----------------------------");
     }

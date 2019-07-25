@@ -18,6 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class JyWebApplication {
 
     public static void main(String[] args) {
+        System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(JyWebApplication.class, args);
         System.out.println("------------------------------启动成功----------------------------");
     }

@@ -23,6 +23,13 @@
 
         <dependency>
             <groupId>com.jy</groupId>
+            <artifactId>jy-example-service</artifactId>
+            <scope>runtime</scope>
+            <version>${jy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jy</groupId>
             <artifactId>jy-example-client</artifactId>
             <version>${jy.version}</version>
         </dependency>

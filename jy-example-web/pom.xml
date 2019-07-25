@@ -24,6 +24,7 @@
         <dependency>
             <groupId>com.jy</groupId>
             <artifactId>jy-example-service</artifactId>
+            <scope>runtime</scope>
             <version>${jy.version}</version>
         </dependency>
 
@@ -33,5 +34,14 @@
             <version>${jy.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
