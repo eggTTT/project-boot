@@ -55,7 +55,7 @@ public class GoodsController {
     @Autowired
     private StringEncryptor encryptor;
 
-    @Reference
+    @Reference(group = "jy-example-rpc")
     private IProducerRpcService producerRpcService;
 
     @RequestMapping("/insert")
@@ -140,7 +140,7 @@ public class GoodsController {
     @RequestMapping("/testDubbo")
     @ResponseBody
     public String testDubbo() {
-        producerRpcService = ServiceBean.getSpringContext().getBean(IProducerRpcService.class);
+        producerRpcService = SpringContextUtils.getBean("producerRpcServiceImpl", IProducerRpcService.class);
         return producerRpcService.getMessage("可以调用了！");
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author: huyu
  * @create: 2019-07-17 17:54
  */
-@Service(interfaceClass = IProducerRpcService.class)
+@Service(group = "jy-example-rpc", interfaceClass = IProducerRpcService.class)
 @Component
 public class ProducerRpcServiceImpl implements IProducerRpcService {
 
