@@ -2,6 +2,7 @@ package com.jy.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.jy.producer.IProducerRpcService;
+import org.springframework.stereotype.Component;
 
 /**
  * @description: 生产者测试实现类
@@ -9,6 +10,7 @@ import com.jy.producer.IProducerRpcService;
  * @create: 2019-07-17 17:54
  */
 @Service(interfaceClass = IProducerRpcService.class)
+@Component
 public class ProducerRpcServiceImpl implements IProducerRpcService {
 
     @Override
