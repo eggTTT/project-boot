@@ -1,12 +1,16 @@
 package com.jy.controller;
 
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.spring.ServiceBean;
 import com.alibaba.fastjson.JSON;
 import com.jy.entity.Goods;
 import com.jy.entity.GoodsEsInfo;
+import com.jy.producer.IProducerRpcService;
 import com.jy.service.GoodsESRepository;
 import com.jy.service.IGoodsService;
 import com.jy.utils.RedisUtils;
+import com.jy.utils.SpringContextUtils;
 import org.jasypt.encryption.StringEncryptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +19,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.math.BigDecimal;
 
@@ -49,6 +54,9 @@ public class GoodsController {
 
     @Autowired
     private StringEncryptor encryptor;
+
+    @Reference
+    private IProducerRpcService producerRpcService;
 
     @RequestMapping("/insert")
     public void insert() {
@@ -127,6 +135,13 @@ public class GoodsController {
     public void encrypt() {
         String pwd = encryptor.encrypt("root");
         logger.info(pwd);
+    }
+
+    @RequestMapping("/testDubbo")
+    @ResponseBody
+    public String testDubbo() {
+        producerRpcService = ServiceBean.getSpringContext().getBean(IProducerRpcService.class);
+        return producerRpcService.getMessage("可以调用了！");
     }
 }
 

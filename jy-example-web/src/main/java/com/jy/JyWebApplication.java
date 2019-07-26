@@ -1,5 +1,6 @@
 package com.jy;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -14,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 // 开启异步调用
 @EnableAsync
 @SpringBootApplication
+@EnableDubbo
 @ComponentScan(basePackages = {"com.jy.*"})
 public class JyWebApplication {
 
