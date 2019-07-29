@@ -27,6 +27,9 @@ public class RedisUtils {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    /**
+     * 操作字符串
+     */
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 

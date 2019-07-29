@@ -7,7 +7,6 @@ import com.xxl.job.core.handler.annotation.JobHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,9 +17,6 @@ import org.springframework.stereotype.Component;
 @Component
 @JobHandler(value = "JobTestHandler")
 public class JobTestHandler extends IJobHandler {
-
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
