@@ -2,7 +2,6 @@ package com.jy.controller;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.spring.ServiceBean;
 import com.alibaba.fastjson.JSON;
 import com.jy.entity.Goods;
 import com.jy.entity.GoodsEsInfo;
@@ -55,7 +54,7 @@ public class GoodsController {
     @Autowired
     private StringEncryptor encryptor;
 
-    @Reference(group = "jy-example-rpc")
+    @Reference(group = "jy-example-rpc", check = false)
     private IProducerRpcService producerRpcService;
 
     @RequestMapping("/insert")
