@@ -17,6 +17,7 @@
     </parent>
 
     <modules>
+        <module>jy-example-admin</module>
         <module>jy-example-web</module>
         <module>jy-example-client</module>
         <module>jy-example-rpc</module>
@@ -45,6 +46,7 @@
         <mysql.connection.version>8.0.16</mysql.connection.version>
         <spring.kafka.version>2.2.7.RELEASE</spring.kafka.version>
         <swagger.version>2.9.2</swagger.version>
+        <springboot.admin.server>2.1.6</springboot.admin.server>
     </properties>
 
     <dependencyManagement>
@@ -188,6 +190,18 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- spring-boot-admin -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${springboot.admin.server}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${springboot.admin.server}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
