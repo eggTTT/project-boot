@@ -143,7 +143,6 @@ public class GoodsController {
     @RequestMapping("/testDubbo")
     @ResponseBody
     public String testDubbo() {
-        producerRpcService = SpringContextUtils.getBean("producerRpcServiceImpl", IProducerRpcService.class);
         return producerRpcService.getMessage("可以调用了！");
     }
 }
