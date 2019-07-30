@@ -8,9 +8,11 @@ import com.jy.entity.GoodsEsInfo;
 import com.jy.producer.IProducerRpcService;
 import com.jy.service.GoodsESRepository;
 import com.jy.service.IGoodsService;
+import com.jy.utils.JasyptUtils;
 import com.jy.utils.RedisUtils;
 import com.jy.utils.SpringContextUtils;
-import org.jasypt.encryption.StringEncryptor;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,7 @@ import java.math.BigDecimal;
  * @author huyu
  * @since 2019-07-16
  */
+@Api(tags = "测试API接口")
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {
@@ -52,11 +55,12 @@ public class GoodsController {
     private GoodsESRepository goodsESRepository;
 
     @Autowired
-    private StringEncryptor encryptor;
+    private JasyptUtils jasyptUtils;
 
     @Reference(group = "jy-example-rpc", check = false)
     private IProducerRpcService producerRpcService;
 
+    @ApiOperation(value = "新增商品接口", notes = "新增商品信息")
     @RequestMapping("/insert")
     public void insert() {
         Goods goods = new Goods();
@@ -132,7 +136,7 @@ public class GoodsController {
 
     @RequestMapping("/encrypt")
     public void encrypt() {
-        String pwd = encryptor.encrypt("root");
+        String pwd = jasyptUtils.encrypt("root");
         logger.info(pwd);
     }
 
