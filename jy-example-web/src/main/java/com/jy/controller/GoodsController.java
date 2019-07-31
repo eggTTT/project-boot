@@ -65,7 +65,7 @@ public class GoodsController {
     public void insert() {
         Goods goods = new Goods();
 
-        goods.setName("苹果");
+        goods.setName("梨子");
         goods.setColor("test");
         goods.setPrice(new BigDecimal(1));
         goods.setNum(1);

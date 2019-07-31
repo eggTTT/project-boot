@@ -1,6 +1,8 @@
 package com.jy.entity;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,6 +24,7 @@ public class Goods implements Serializable {
 
     @ApiModelProperty(name = "id", value = "主键", hidden = true)
     @Excel(name = "id", width = 50)
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     @ApiModelProperty(name = "name", value = "商品名称")
