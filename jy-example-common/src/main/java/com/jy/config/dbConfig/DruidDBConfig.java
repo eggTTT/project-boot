@@ -23,7 +23,7 @@ import java.util.Map;
 @Configuration
 public class DruidDBConfig {
 
-    @Value("spring.datasource.driver-class-name")
+    /*@Value("spring.datasource.driver-class-name")
     private String jdbcDriver;
 
     @Value("spring.datasource.url")
@@ -33,7 +33,7 @@ public class DruidDBConfig {
     private String jdbcUsername;
 
     @Value("${spring.datasource.password}")
-    private String jdbcPassword;
+    private String jdbcPassword;*/
 
     @Bean
     public ServletRegistrationBean druidServlet() {
@@ -61,15 +61,15 @@ public class DruidDBConfig {
         return filterRegistrationBean;
     }
 
-    @Bean(name="dataSource")
+    /*@Bean(name="dataSource")
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource dataSource(){
         return new DruidDataSource();
-    }
+    }*/
 
     // 配置事物管理器
-    @Bean(name="transactionManager")
+    /*@Bean(name="transactionManager")
     public DataSourceTransactionManager transactionManager(){
         return new DataSourceTransactionManager(dataSource());
-    }
+    }*/
 }

@@ -38,7 +38,7 @@
         <mybatisplus.version>3.0.6</mybatisplus.version>
         <velocity.version>2.1</velocity.version>
         <freemarker.version>2.3.28</freemarker.version>
-        <druid.version>1.1.12</druid.version>
+        <druid.version>1.1.10</druid.version>
         <easypoi.version>4.1.0</easypoi.version>
         <elasticsearch.starter.version>2.1.6.RELEASE</elasticsearch.starter.version>
         <jasypt.version>2.1.1</jasypt.version>
@@ -99,10 +99,10 @@
                 <version>${freemarker.version}</version>
             </dependency>
 
-            <!-- 使用数据源 -->
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
             <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
+                <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
 
@@ -223,6 +223,11 @@
             <artifactId>spring-context-support</artifactId>
             <scope>compile</scope>
             <version>${spring.context.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
     </dependencies>
 
