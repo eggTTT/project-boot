@@ -65,8 +65,9 @@ spring:
       cluster-nodes: 10.128.62.33:9300 # 节点的地址
       repositories:
         enabled: true # 是否开启本地存储
-      rest:
-        uris: http://10.128.62.33:9200 # http协议，用于外部通讯，防止actuator对elasticsearch健康检查失败
+  elasticsearch:
+    rest:
+      uris: http://10.128.62.33:9200 # http协议，用于外部通讯，防止actuator对elasticsearch健康检查失败
 
 # mybatis-plus配置
 mybatis-plus:
