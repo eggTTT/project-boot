@@ -11,11 +11,11 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDubbo
 @ComponentScan(basePackages = {"com.jy.*"})
-public class JyDubboRpcApplication {
+public class JyRpcApplication {
 
     public static void main(String[] args) {
         System.setProperty("es.set.netty.runtime.available.processors", "false");
-        SpringApplication.run(JyDubboRpcApplication.class, args);
+        SpringApplication.run(JyRpcApplication.class, args);
         System.out.println("------------------------------启动成功----------------------------");
     }
 
