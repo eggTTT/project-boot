@@ -3,6 +3,7 @@ package com.jy.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
+import com.jy.demo.service.HelloWorldService;
 import com.jy.entity.Goods;
 import com.jy.entity.GoodsEsInfo;
 import com.jy.producer.IProducerRpcService;
@@ -59,6 +60,9 @@ public class GoodsController {
 
     @Reference(group = "jy-example-rpc", check = false)
     private IProducerRpcService producerRpcService;
+
+    @Autowired
+    private HelloWorldService helloWorldService;
 
     @ApiOperation(value = "新增商品接口", notes = "新增商品信息")
     @RequestMapping("/insert")
@@ -144,6 +148,12 @@ public class GoodsController {
     @ResponseBody
     public String testDubbo() {
         return producerRpcService.getMessage("可以调用了！");
+    }
+
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String sayHello() {
+        return helloWorldService.sayHello();
     }
 }
 
