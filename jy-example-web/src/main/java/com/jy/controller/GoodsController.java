@@ -3,7 +3,6 @@ package com.jy.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
-import com.jy.demo.service.HelloWorldService;
 import com.jy.entity.Goods;
 import com.jy.entity.GoodsEsInfo;
 import com.jy.producer.IProducerRpcService;
@@ -11,7 +10,6 @@ import com.jy.service.GoodsESRepository;
 import com.jy.service.IGoodsService;
 import com.jy.utils.JasyptUtils;
 import com.jy.utils.RedisUtils;
-import com.jy.utils.SpringContextUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -61,15 +59,12 @@ public class GoodsController {
     @Reference(group = "jy-example-rpc", check = false)
     private IProducerRpcService producerRpcService;
 
-    @Autowired
-    private HelloWorldService helloWorldService;
-
     @ApiOperation(value = "新增商品接口", notes = "新增商品信息")
     @RequestMapping("/insert")
     public void insert() {
         Goods goods = new Goods();
 
-        goods.setName("梨子");
+        goods.setName("车厘子1");
         goods.setColor("test");
         goods.setPrice(new BigDecimal(1));
         goods.setNum(1);
@@ -148,12 +143,6 @@ public class GoodsController {
     @ResponseBody
     public String testDubbo() {
         return producerRpcService.getMessage("可以调用了！");
-    }
-
-    @RequestMapping("/hello")
-    @ResponseBody
-    public String sayHello() {
-        return helloWorldService.sayHello();
     }
 }
 
