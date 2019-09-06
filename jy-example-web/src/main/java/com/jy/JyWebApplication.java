@@ -11,16 +11,16 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 // 定时任务
 @EnableScheduling
 // 缓存
-@EnableCaching
+//@EnableCaching
 // 开启异步调用
 @EnableAsync
 @SpringBootApplication
-@EnableDubbo
+//@EnableDubbo
 @ComponentScan(basePackages = {"com.jy.*"})
 public class JyWebApplication {
 
     public static void main(String[] args) {
-        System.setProperty("es.set.netty.runtime.available.processors", "false");
+//        System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(JyWebApplication.class, args);
         System.out.println("------------------------------启动成功----------------------------");
     }

@@ -52,11 +52,11 @@
     <dependencyManagement>
         <dependencies>
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-                <version>${elasticsearch.starter.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+                <!--<version>${elasticsearch.starter.version}</version>-->
+            <!--</dependency>-->
 
             <!-- 集成mybatis -->
             <!-- mybatisplus集成 -->

@@ -1,24 +1,22 @@
 package com.jy.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
 
 /**
  * @description: es测试实体类
  * @author: huyu
  * @create: 2019-07-25 09:43
  */
-@Document(indexName = "foods",type = "goods", shards = 1,replicas = 0, refreshInterval = "-1")
+//@Document(indexName = "foods",type = "goods", shards = 1,replicas = 0, refreshInterval = "-1")
 public class GoodsEsInfo {
 
     @Id
     private String id;
 
-    @Field
+//    @Field
     private String name;
 
-    @Field
+//    @Field
     private String description;
 
     public String getId() {
