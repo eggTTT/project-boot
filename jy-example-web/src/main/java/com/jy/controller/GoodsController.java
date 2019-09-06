@@ -5,6 +5,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.jy.entity.Goods;
 import com.jy.entity.GoodsEsInfo;
+import com.jy.mobile.ResponseModel;
 import com.jy.producer.IProducerRpcService;
 import com.jy.service.GoodsESRepository;
 import com.jy.service.IGoodsService;
@@ -61,7 +62,8 @@ public class GoodsController {
 
     @ApiOperation(value = "新增商品接口", notes = "新增商品信息")
     @RequestMapping("/insert")
-    public void insert() {
+    @ResponseBody
+    public ResponseModel insert() {
         Goods goods = new Goods();
 
         goods.setName("车厘子1");
@@ -72,6 +74,9 @@ public class GoodsController {
 
         goodsService.save(goods);
         logger.info("保存成功了");
+        ResponseModel responseModel = new ResponseModel();
+        responseModel.setData(JSON.toJSONString(goods));
+        return responseModel;
     }
 
 //    @RequestMapping("/set")
