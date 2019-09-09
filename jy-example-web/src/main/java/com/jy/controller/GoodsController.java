@@ -52,8 +52,8 @@ public class GoodsController {
     @Autowired
     private JasyptUtils jasyptUtils;
 
-    @Reference(group = "jy-example-rpc", check = false)
-    private IProducerRpcService producerRpcService;
+//    @Reference(group = "jy-example-rpc", check = false)
+//    private IProducerRpcService producerRpcService;
 
     @ApiOperation(value = "新增商品接口", notes = "新增商品信息")
     @RequestMapping("/insert")
@@ -139,10 +139,10 @@ public class GoodsController {
         logger.info(pwd);
     }
 
-    @RequestMapping("/testDubbo")
-    @ResponseBody
-    public String testDubbo() {
-        return producerRpcService.getMessage("可以调用了！");
-    }
+//    @RequestMapping("/testDubbo")
+//    @ResponseBody
+//    public String testDubbo() {
+//        return producerRpcService.getMessage("可以调用了！");
+//    }
 }
 

@@ -9,7 +9,7 @@
 
     <parent>
         <groupId>com.jy</groupId>
-        <artifactId>jy-example-boot</artifactId>
+        <artifactId>jy-boot</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
