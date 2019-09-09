@@ -6,6 +6,8 @@
     <groupId>com.jy</groupId>
     <artifactId>jy-example-service</artifactId>
     <name>jy-example-service</name>
+    <packaging>jar</packaging>
+
 
     <parent>
         <groupId>com.jy</groupId>

@@ -6,6 +6,8 @@
     <groupId>com.jy</groupId>
     <artifactId>jy-example-common</artifactId>
     <name>jy-example-common</name>
+    <packaging>jar</packaging>
+
 
     <parent>
         <groupId>com.jy</groupId>
