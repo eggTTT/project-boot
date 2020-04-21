@@ -137,6 +137,7 @@ public class GoodsController {
     public void encrypt() {
         String pwd = jasyptUtils.encrypt("root");
         logger.info(pwd);
+        //111
     }
 
 //    @RequestMapping("/testDubbo")
