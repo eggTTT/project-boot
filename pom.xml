@@ -33,7 +33,7 @@
         <guava.version>22.0</guava.version>
         <maven.plugins.version>2.4.3</maven.plugins.version>
         <fastjson.version>1.2.38</fastjson.version>
-        <xxl.job.version>2.1.0</xxl.job.version>
+        <xxl.job.version>2.3.1</xxl.job.version>
         <mybatisplus.starter.version>1.0.5</mybatisplus.starter.version>
         <mybatisplus.version>3.0.6</mybatisplus.version>
         <velocity.version>2.1</velocity.version>
